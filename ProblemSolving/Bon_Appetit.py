@@ -1,0 +1,21 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the bonAppetit function below.
+def bonAppetit(bill, k, b):
+    _anna_sum = sum([item for i, item in enumerate(bill) if not i == k]) // 2
+    result = b - _anna_sum if _anna_sum < b else "Bon Appetit"
+    print(result)
+
+if __name__ == '__main__':
+    nk = input().rstrip().split()
+    n = int(nk[0])
+    k = int(nk[1])
+    bill = list(map(int, input().rstrip().split()))
+    b = int(input().strip())
+    bonAppetit(bill, k, b)
